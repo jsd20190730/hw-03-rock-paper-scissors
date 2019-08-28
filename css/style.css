@@ -24,11 +24,6 @@ button:active {
   background: green;
 }
 
-.container {
-  width: 960px;
-  margin: 0 auto;
-}
-
 .scoreboard {
   width: 14em;
   margin: auto;
