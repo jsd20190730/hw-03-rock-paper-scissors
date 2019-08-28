@@ -23,33 +23,33 @@ function play(humanPlay) {
 
   if(humanPlay == 'rock') {
     if(computerPlay == 'rock') {
-      document.getElementById('status').innerHTML += "<p>You tied. :|</p>";
+      $('#status').append("<p>You tied. :|</p>");
     } else if (computerPlay == 'paper') {
-      document.getElementById('status').innerHTML += "<p>You lose. :(</p>";
+      $('#status').append("<p>You lose. :(</p>");
       computerScore+=1;
     } else if (computerPlay == 'scissors') {
-      document.getElementById('status').innerHTML += "<p>You win! :)</p>";
+      $('#status').append("<p>You win! :)</p>");
       humanScore+=1;
     }
   } else if (humanPlay == 'paper') {
     if(computerPlay == 'rock') {
-      document.getElementById('status').innerHTML += "<p>You win! :)</p>";
+      $('#status').append("<p>You win! :)</p>");
       humanScore+=1;
     } else if (computerPlay == 'paper') {
-      document.getElementById('status').innerHTML += "<p>You tied. :|</p>";
+      $('#status').append("<p>You tied. :|</p>");
     } else if (computerPlay == 'scissors') {
-      document.getElementById('status').innerHTML += "<p>You lose. :(</p>";
+      $('#status').append("<p>You lose. :(</p>");
       computerScore+=1;
     }
   } else if (humanPlay == 'scissors') {
     if(computerPlay == 'rock') {
-      document.getElementById('status').innerHTML += "<p>You lose. :(</p>";
+      $('#status').append("<p>You lose. :(</p>");
       computerScore+=1;
     } else if (computerPlay == 'paper') {
-      document.getElementById('status').innerHTML += "<p>You win! :)</p>";
+      $('#status').append("<p>You win! :)</p>");
       humanScore+=1;
     } else if (computerPlay == 'scissors') {
-      document.getElementById('status').innerHTML += "<p>You tied. :|</p>";
+      $('#status').append("<p>You tied. :|</p>");
     }
   }
 
