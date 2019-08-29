@@ -22,18 +22,10 @@ $(function () {
     let computerChoice = computerChooses()
     if (humanChoice === computerChoice) {
       console.log('tie')
-    } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-      console.log('playerB wins')
-    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-      console.log('playerA wins')
-    } else if (humanChoice === 'rock' && computerChoice === 'paper') {
-      console.log('playerB wins')
-    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-      console.log('playerA wins')
-    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-      console.log('playerA wins')
-    } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-      console.log('playerB wins')
+    } else if (computerChoice === 'paper') {
+      $('#computerScore').text(parseInt($('#humanScore').text()) + 1)
+    } else if (computerChoice === 'scissors') {
+      $('#humanScore').text(parseInt($('#humanScore').text()) + 1)
     }
   })
       //evaluate winner for paper choice
@@ -76,5 +68,5 @@ $(function () {
       console.log('playerB wins')
     }
   })
-  
+
 })
