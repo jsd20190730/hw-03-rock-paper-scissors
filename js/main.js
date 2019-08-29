@@ -16,56 +16,46 @@ $(function () {
     }
   }
 
-    //evaluate winner for rock choice
+    //user chooses rock
   $('#rock').click(() => {
     let humanChoice = 'rock'
     let computerChoice = computerChooses()
     if (humanChoice === computerChoice) {
-      console.log('tie')
+      $('#status').text('tie')
     } else if (computerChoice === 'paper') {
-      $('#computerScore').text(parseInt($('#humanScore').text()) + 1)
+      $('#computerScore').text(parseInt($('#computerScore').text()) + 1)
+      $('#status').text('You chose rock, the computer chose paper. You got stuffed on :(')
     } else if (computerChoice === 'scissors') {
       $('#humanScore').text(parseInt($('#humanScore').text()) + 1)
+      $('#status').text('You chose rock, the computer chose scissors. You crushed the competition :)')
     }
   })
-      //evaluate winner for paper choice
+    //user chooses paper
   $('#paper').click(() => {
     let humanChoice = 'paper'
     let computerChoice = computerChooses()
     if (humanChoice === computerChoice) {
-      console.log('tie')
-    } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-      console.log('playerB wins')
+      $('#status').text('tie')
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-      console.log('playerA wins')
-    } else if (humanChoice === 'rock' && computerChoice === 'paper') {
-      console.log('playerB wins')
-    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-      console.log('playerA wins')
-    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-      console.log('playerA wins')
+      $('#humanScore').text(parseInt($('#humanScore').text()) + 1)
+      $('#status').text('You chose paper, the computer chose rock. You got it covered :)')
     } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-      console.log('playerB wins')
+      $('#computerScore').text(parseInt($('#computerScore').text()) + 1)
+      $('#status').text('You chose paper, the computer chose scissors. You just got diced :(')
     }
   })
-      //evaluate winner for scissors choice
+    //user chooses scissors
   $('#scissors').click(() => {
     let humanChoice = 'scissors'
     let computerChoice = computerChooses()
     if (humanChoice === computerChoice) {
-      console.log('tie')
-    } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-      console.log('playerB wins')
-    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-      console.log('playerA wins')
-    } else if (humanChoice === 'rock' && computerChoice === 'paper') {
-      console.log('playerB wins')
-    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-      console.log('playerA wins')
-    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-      console.log('playerA wins')
-    } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-      console.log('playerB wins')
+      $('#status').text('tie')
+    } else if (computerChoice === 'rock') {
+      $('#computerScore').text(parseInt($('#computerScore').text()) + 1)
+      $('#status').text('You chose scissors, the computer chose rock. Absolutely decimated :(')
+    } else if (computerChoice === 'paper') {
+      $('#humanScore').text(parseInt($('#humanScore').text()) + 1)
+      $('#status').text('You chose scissors, the computer chose paper. Way to cut up the competition :)')
     }
   })
 
