@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<meta charset="UTF-8">
-  	<title>Parchment, Stone, or Blade?</title>
-  	<link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
   </head>
 
   <body>
     <div class="container">
-      <h1>Rock, Paper, or Scissors?</h1>
 
-      <p>
-        A steam-powered bot has challenged you to a game. <strong>Rock</strong> beats <strong>scissors</strong>, <strong>scissors</strong> beats <strong>paper</strong>, and <strong>paper</strong> beats <strong>rock</strong>.
-      </p>
+      <h1>Rock &#9830; Paper &#9830; Scissors</h1>
+
+      <p>A bot has challenged you to a game!</p>
 
       <div class="scoreboard">
         <h2>Scoreboard</h2>
         <table>
           <tbody>
             <tr>
-              <td id="humanScore">0</td>
-              <td id="computerScore">0</td>
+              <td id="userScore">0</td>
+              <td id="botScore">0</td>
             </tr>
           </tbody>
           <tfoot>
@@ -40,10 +39,14 @@
 
       <button id="scissors">Scissors</button>
 
-      <div id="status"></div>
-    </div>
+      <div id="choices"></div>
+      <div id="winner"></div>
 
-    <script src="js/jquery-2.1.4.js"></script>
-    <script src="js/main.js"></script>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
