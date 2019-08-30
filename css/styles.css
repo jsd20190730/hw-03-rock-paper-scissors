@@ -2,8 +2,8 @@ body {
   font-family: monospace;
   font-size: 20px;
   text-align: center;
-  background: black;
-  color: lime;
+  background: white;
+  color: #de529a;
   margin: 3em;
 }
 
@@ -12,16 +12,18 @@ strong {
 }
 
 button {
-  background: lime;
-  color: black;
+  background: #de529a;
+  color: white;
   border: none;
   padding: 10px 15px;
   font-size: 1.2em;
   font-family: monospace;
   font-weight: bold;
 }
+
 button:active {
-  background: green;
+  background: white;
+  color: #de529a;
 }
 
 .container {
@@ -32,26 +34,34 @@ button:active {
 .scoreboard {
   width: 14em;
   margin: auto;
-  border: 1px solid lime;
+  border: 1px solid #de529a;
 }
+
 .scoreboard h2 {
-  border-bottom: 1px solid lime;
+  border-bottom: 1px solid #de529a;
   margin: 0;
   padding: 10px;
 }
+
 .scoreboard table {
   margin: 10px auto;
   width: 100%;
   border-collapse: collapse;
 }
+
 .scoreboard th, .scoreboard td {
   text-align: center;
 }
+
 .scoreboard td {
   font-size: 3em;
   padding: 0 20px;
 }
 
-#status {
+#choices, #winner {
   margin-top: 20px;
+}
+
+#displayWinner {
+  display:none;
 }
