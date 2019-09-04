@@ -75,13 +75,15 @@ $( document ).ready(function() {
 
   let computerScore = 0
 
+
+
     function makeComputerChoice(){
 
       let computerChoice = ""
 
       let randomPick = Math.random()
       //gives you a random float between 0 and 1
-
+      //made three parameters that equal rock,paper, or scissors
       if (randomPick < .33) {
 
         computerChoice = 'rock'
@@ -98,62 +100,80 @@ $( document ).ready(function() {
       return computerChoice
   }
     function makeHumanChoice(humanChoice) {
-
+      //computerChoice equals the function for makeComputerChoice
       let computerChoice = makeComputerChoice()
 
-      if (computerChoice == humanChoice) {
-        console.log('you tied')
+      if (computerChoice === humanChoice) {
+        
+        $('.winningMessage').text('you tied')
 
-      } else if (computerChoice == 'rock' && humanChoice == 'paper') {
-        console.log ('you won')
-        displayHumanScore()
+      } else if (computerChoice === 'rock' && humanChoice === 'paper') {
+
+        $('.winningMessage').text('you won')
         humanScore = humanScore + 1
-
-
-      } else if (humanChoice == 'rock' && computerChoice == 'paper') {
-        console.log ('the bot won')
         displayComputerScore()
+
+      } else if (humanChoice === 'rock' && computerChoice === 'paper') {
+
+        $('.winningMessage').text('the bot won')
         computerScore = computerScore + 1
-
-      } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
-        console.log ('you won')
-        displayHumanScore()
-        humanScore = humanScore + 1
-
-      } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
-        console.log('the bot won')
         displayComputerScore()
-        computerScore = computerScore + 1
 
-      } else if (humanChoice == 'rock' && computerChoice == 'scissors'){
-        console.log ('you won')
-        displayHumanScore()
+      } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+
+        $('.winningMessage').text('you won')
         humanScore = humanScore + 1
+        displayComputerScore()
+      } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
 
+        $('.winningMessage').text('the bot won')
+        computerScore = computerScore + 1
+        displayComputerScore()
+
+      } else if (humanChoice === 'rock' && computerChoice === 'scissors'){
+
+        $('.winningMessage').text('you won')
+        humanScore = humanScore + 1
+        displayComputerScore()
       } else {
-        console.log ("the bot won")
-        displayComputerScore()
+
+        $('.winningMessage').text("the bot won")
         computerScore = computerScore + 1
+        displayComputerScore()
+
+
       }
     }
+      //make click functions for each scenario that the user makes
 
       $('#rock').click(() => {
         $('.message').text('you picked rock')
         makeHumanChoice('rock')
+        displayHumanScore()
       })
       $('#paper').click(() => {
         $('.message').text('you picked paper')
         makeHumanChoice('paper')
+        displayHumanScore()
       })
       $('#scissors').click(() => {
         $('.message').text('you picked scissors')
         makeHumanChoice('scissors')
+        displayHumanScore()
       })
+      //make functions on how to displays the scores
+      function displayHumanScore(){
 
-      function displayHumanScore() {
         $('#humanScore').text(humanScore)
+
+
       }
       function displayComputerScore() {
+
         $('#computerScore').text(computerScore)
       }
-  })
+
+
+
+
+    })
